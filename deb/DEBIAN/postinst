@@ -1,0 +1,15 @@
+#!/bin/sh -e
+
+case "$1" in
+    configure|reconfigure)
+			ln -fs /opt/Postman/app/Postman /usr/bin/postman
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac

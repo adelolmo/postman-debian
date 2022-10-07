@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Postman API Tool
+GenericName=Postman
+Comment=Testing API
+Exec=/opt/Postman/app/Postman
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=/opt/Postman/app/resources/app/assets/icon.png
+StartupWMClass=/opt/Postman/app/Postman
+StartupNotify=true
+Categories=Development;

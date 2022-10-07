@@ -1,0 +1,9 @@
+Package: postman
+Version: {{version}}
+Architecture: amd64
+Maintainer: Andoni del Olmo <andoni.delolmo@gmail.com>
+Installed-Size: {{size}}
+Section: extras
+Priority: standard
+Homepage: https://github.com/adelolmo/postman-debian
+Description: Postman API Tool
