@@ -1,4 +1,4 @@
-#MAKEFLAGS += --silent
+MAKEFLAGS += --silent
 
 BIN_DIR=/opt/Postman
 BUILD_DIR=build-debian
