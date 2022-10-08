@@ -5,6 +5,9 @@ case "$1" in
         rm /usr/bin/postman
     ;;
 
+	purge)
+	;;
+
     disappear|upgrade|failed-upgrade|abort-install|abort-upgrade)
     ;;
 

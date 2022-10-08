@@ -1,12 +1,12 @@
 [Desktop Entry]
-Name=Postman API Tool
+Name=Postman API platform
 GenericName=Postman
-Comment=Testing API
-Exec=/opt/Postman/app/Postman
+Comment=Postman is an API platform for developers to design, build, test and iterate their APIs
+Exec=/opt/Postman/Postman
 Terminal=false
 X-MultipleArgs=false
 Type=Application
-Icon=/opt/Postman/app/resources/app/assets/icon.png
-StartupWMClass=/opt/Postman/app/Postman
+Icon=/opt/Postman/resources/app/assets/icon.png
+StartupWMClass=/opt/Postman/Postman
 StartupNotify=true
 Categories=Development;

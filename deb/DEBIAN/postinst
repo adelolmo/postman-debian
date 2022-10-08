@@ -2,7 +2,7 @@
 
 case "$1" in
     configure|reconfigure)
-			ln -fs /opt/Postman/app/Postman /usr/bin/postman
+		ln -fs /opt/Postman/Postman /usr/bin/postman
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

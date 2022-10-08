@@ -6,4 +6,5 @@ Installed-Size: {{size}}
 Section: extras
 Priority: standard
 Homepage: https://github.com/adelolmo/postman-debian
-Description: Postman API Tool
+Description: Postman API platform
+	Postman is an API platform for developers to design, build, test and iterate their APIs
