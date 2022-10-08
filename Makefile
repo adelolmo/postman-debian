@@ -8,10 +8,10 @@ RELEASE_DIR := $(realpath $(CURDIR)/..)
 VERSION=9.31.0
 
 .PHONY: all
-all: $(TMP_DIR) $(BUILD_DIR)/linux64_$(VERSION) $(BUILD_DIR)/Postman/Postman
+all: $(BUILD_DIR) $(BUILD_DIR)/linux64_$(VERSION) $(BUILD_DIR)/Postman/Postman
 
 .PHONY: debian
-debian: clean $(BUILD_DIR)/DEBIAN
+debian: clean $(TMP_DIR) $(BUILD_DIR)/DEBIAN
 	@echo Building package...
 	chmod --quiet 0555 $(TMP_DIR)/DEBIAN/p* || true
 	fakeroot dpkg-deb -b -z9 $(TMP_DIR) $(RELEASE_DIR)
@@ -29,13 +29,17 @@ $(BUILD_DIR)/DEBIAN: $(TMP_DIR)
 	@sed -i "s/{{version}}/$(VERSION)/g;s/{{size}}/$(SIZE)/g" "$(TMP_DIR)/DEBIAN/control"
 
 $(BUILD_DIR)/linux64_$(VERSION):
-	wget -O $(BUILD_DIR)/linux64_$(VERSION) -P $(BUILD_DIR) https://dl.pstmn.io/download/version/$(VERSION)/linux64
+	@echo Download postman $(VERSION)...
+	wget --quiet -O $(BUILD_DIR)/linux64_$(VERSION) -P $(BUILD_DIR) https://dl.pstmn.io/download/version/$(VERSION)/linux64
 
 $(BUILD_DIR)/Postman/Postman:
+	@echo Extract tar ball...
 	tar -xf $(BUILD_DIR)/linux64_$(VERSION) -C $(BUILD_DIR)
 
+$(BUILD_DIR):
+	mkdir -p $(BUILD_DIR)
+
 $(TMP_DIR):
-	#rm -rf $(TMP_DIR)
 	mkdir -p $(TMP_DIR)$(BIN_DIR)
 
 .PHONY: install
