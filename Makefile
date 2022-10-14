@@ -32,7 +32,7 @@ $(PKG_DIR)/DEBIAN:
 
 $(BUILD_DIR)/linux64_$(VERSION):
 	@echo Download postman $(VERSION)...
-	wget --quiet -O $(BUILD_DIR)/linux64_$(VERSION) -P $(BUILD_DIR) https://dl.pstmn.io/download/version/$(VERSION)/linux64
+	wget --quiet -O $(BUILD_DIR)/linux64_$(VERSION) https://dl.pstmn.io/download/version/$(VERSION)/linux64
 
 $(TMP_DIR)/Postman:
 	@echo Extract tar ball...
